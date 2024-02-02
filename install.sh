@@ -34,7 +34,7 @@ else
 fi
 
 # Install Flameshot, Tesseract, and xclip
-install_packages "flameshot tesseract tesseract-data-spa xclip" $package_manager
+install_packages "xapp flameshot tesseract-ocr tesseract-ocr-eng tesseract-ocr-tur xclip" $package_manager
 
 # Create the directory if it does not exist
 mkdir -p ~/.ocr
@@ -46,7 +46,7 @@ cat > ~/.ocr/flameshot_ocr.sh << 'EOF'
 TEMPFILE="$(mktemp /tmp/screenshot-XXXXXX.png)"
 flameshot gui --raw > "$TEMPFILE"
 if [ -s "$TEMPFILE" ]; then
-    tesseract "$TEMPFILE" stdout -l spa | xclip -selection clipboard
+    tesseract "$TEMPFILE" stdout -l eng+tur | xclip -selection clipboard
     echo "Text copied to clipboard."
     rm "$TEMPFILE"
 else
