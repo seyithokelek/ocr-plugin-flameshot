@@ -1,5 +1,10 @@
 # Flameshot OCR Script
 
+## Fork Update
+Modified packages that cause errors during installation.
+
+English and Turkish language packs have been automatically installed and both are now working.
+
 ## Description
 This script provides an easy and convenient way to capture screenshots and extract text using OCR (Optical Character Recognition) with Flameshot, Tesseract, and xclip. It is designed for Linux users and supports multiple desktop environments.
 
